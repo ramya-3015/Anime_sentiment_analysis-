@@ -2,10 +2,13 @@ import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 
+# Download the sentiment lexicon
 nltk.download('vader_lexicon')
 
+# Initialize the sentiment analyzer
 sia = SentimentIntensityAnalyzer()
 
+# 🎌 Sample anime sentences (simulated social media data)
 anime_sentences = [
     "Gojo Satoru is the most badass character ever!",
     "I hate how they ended Attack on Titan. Terrible.",
@@ -19,35 +22,33 @@ anime_sentences = [
     "I cried at the end of Your Name. Beautiful movie."
 ]
 
-sentiment_counts = {"Positive": 0, "Negative": 0, "Neutral": 0}
-classified_data = []
+# 🔍 Sentiment classification
+sentiment_counts = {"positive": 0, "neutral": 0, "negative": 0}
 
 for sentence in anime_sentences:
-    scores = sia.polarity_scores(sentence)
-    compound = scores['compound']
-
+    score = sia.polarity_scores(sentence)
+    compound = score['compound']
+    
     if compound >= 0.05:
-        sentiment = "Positive"
+        sentiment_counts["positive"] += 1
     elif compound <= -0.05:
-        sentiment = "Negative"
+        sentiment_counts["negative"] += 1
     else:
-        sentiment = "Neutral"
+        sentiment_counts["neutral"] += 1
+    
+    # (Optional) Print sentence with its score
+    print(f"{sentence} => {score}")
 
-    sentiment_counts[sentiment] += 1
-    classified_data.append((sentence, scores, sentiment))
+# 📊 Visualization
+labels = list(sentiment_counts.keys())
+values = list(sentiment_counts.values())
 
-print("\n🎌 Anime Sentiment Analysis Results 🎌\n")
-for sentence, scores, sentiment in classified_data:
-    print(f': {sentence}")
-    print(f": {scores}")
-    print(f": {sentiment}")
-    print("-" * 60)
-
-plt.figure(figsize=(6, 4))
-plt.bar(sentiment_counts.keys(), sentiment_counts.values(), color=['green', 'red', 'gray'])
-plt.title("Sentiment Distribution - Anime Fan Reactions")
+# Bar Chart
+plt.figure(figsize=(8, 5))
+plt.bar(labels, values, color=['green', 'grey', 'red'])
+plt.title("Sentiment Analysis of Anime Opinions")
 plt.xlabel("Sentiment")
 plt.ylabel("Number of Sentences")
-plt.grid(True, linestyle='--', alpha=0.5)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
