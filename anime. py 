@@ -38,9 +38,9 @@ for sentence in anime_sentences:
 
 print("\n🎌 Anime Sentiment Analysis Results 🎌\n")
 for sentence, scores, sentiment in classified_data:
-    print(f"💬 Sentence: {sentence}")
-    print(f"📊 Scores: {scores}")
-    print(f"🧠 Sentiment: {sentiment}")
+    print(f': {sentence}")
+    print(f": {scores}")
+    print(f": {sentiment}")
     print("-" * 60)
 
 plt.figure(figsize=(6, 4))
