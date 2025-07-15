@@ -10,7 +10,7 @@ sia = SentimentIntensityAnalyzer()
 
 # 🎌 Sample anime sentences (simulated social media data)
 anime_sentences = [
-    "Gojo Satoru is the most badass character ever!",
+    "Gojo Satoru is the most badass charters ever!",
     "I hate how they ended Attack on Titan. Terrible.",
     "One Piece is a legendary anime. Oda is a genius!",
     "Naruto had a lot of filler episodes. It was boring sometimes.",
