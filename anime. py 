@@ -10,16 +10,18 @@ sia = SentimentIntensityAnalyzer()
 
 # 🎌 Sample anime sentences (simulated social media data)
 anime_sentences = [
-    "Gojo Satoru is the most badass character ever!",
+    "Gojo Satoru is the most badass   character ever!",
     "I hate how they ended Attack on Titan. Terrible.",
     "One Piece is a legendary anime. Oda is a genius!",
     "Naruto had a lot of filler episodes. It was boring sometimes.",
     "That fight scene in Demon Slayer gave me chills!",
     "The animation in Jujutsu Kaisen is okay, not the best though.",
     "Luffy's Gear 5 transformation was insane!",
-    "The story of Boruto is so disappointing.",
+    "The story of Boruto is so       
+      disappointing.",
     "Levi Ackerman scenes are always top-tier.",
-    "I cried at the end of Your Name. Beautiful movie."
+    "I cried at the end of Your Name.      
+     Beautiful movie."
 ]
 
 # 🔍 Sentiment classification
