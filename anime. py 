@@ -10,7 +10,7 @@ sia = SentimentIntensityAnalyzer()
 
 # 🎌 Sample anime sentences (simulated social media data)
 anime_sentences = [
-    "Gojo Satoru is the most badass charters ever!",
+    "Gojo Satoru is the most badass character ever!",
     "I hate how they ended Attack on Titan. Terrible.",
     "One Piece is a legendary anime. Oda is a genius!",
     "Naruto had a lot of filler episodes. It was boring sometimes.",
@@ -36,14 +36,13 @@ for sentence in anime_sentences:
     else:
         sentiment_counts["neutral"] += 1
     
-    # (Optional) Print sentence with its score
+    # (Optional) Print sentence with sentiment score
     print(f"{sentence} => {score}")
 
-# 📊 Visualization
+# 📊 Bar Chart Visualization
 labels = list(sentiment_counts.keys())
 values = list(sentiment_counts.values())
 
-# Bar Chart
 plt.figure(figsize=(8, 5))
 plt.bar(labels, values, color=['green', 'grey', 'red'])
 plt.title("Sentiment Analysis of Anime Opinions")
@@ -52,3 +51,7 @@ plt.ylabel("Number of Sentences")
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
+
+# 🍕 (Bonus) Pie Chart Visualization
+plt.figure(figsize=(6, 6))
+plt
